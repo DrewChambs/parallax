@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+
+    <style>
+      /******* GLOBAL STYLES 4/28/2021 ************ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* outline: 1px solid red; */
+}
+:root {
+  font-family: sans-serif;
+  --clw: #fff;
+  --clb: #000;
+  --bxs: 0px 8px 10px -10px #888888;
+}
+body {
+  line-height: 2em;
+}
+
+.header {
+  padding-top: 15px;
+  position: relative;
+  background: lightgreen;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: var(--bxs);
+}
+.navigation {
+  height: 0;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  transition: 0.5s;
+}
+
+ul li {
+  border-bottom: 1px solid #fff;
+}
+ul li a {
+  padding-left: 30px;
+}
+li a {
+  list-style: none;
+  padding: 10px 0 10px 0.7rem;
+}
+li:last-of-type {
+  border-bottom: none;
+}
+a {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #848a87;
+}
+.navigation a {
+  display: block;
+  width: 100vw;
+  transition: 0.5s;
+}
+.navigation a:hover {
+  background: rgb(13, 50, 63);
+  color: darkgrey;
+  font-size: 1.2em;
+}
+.main-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  transition: 0.5s;
+}
+.social {
+  display: none;
+}
+.social li {
+  list-style: none;
+}
+.show-links {
+  /* height: 13.188rem; */
+  height: 18rem;
+}
+.lowermain {
+  margin-top: 18rem;
+}
+/********** HAMBURGER ************/
+
+.navtoglab span,
+.navtoglab span::before,
+.navtoglab span::after {
+  position: relative;
+  display: none;
+  background: #000;
+  height: 4px;
+  width: 2em;
+}
+.navtoglab span::before,
+.navtoglab span::after {
+  content: "";
+  position: absolute;
+}
+.navtoglab span::before {
+  bottom: 7px;
+}
+.navtoglab span::after {
+  top: 7px;
+}
+/******* END HAMBURGER ************/
+
+@media (max-width: 600px) {
+  .navtoglab span,
+  .navtoglab span::before,
+  .navtoglab span::after {
+    display: block;
+  }
+}
+
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+    <h1 class="logo">Navigation Logo</h1>
+    <!-- <button class="dropx">X</button> -->
+    <nav class="navigation">
+      <ul class="links">
+              <li><a href="index.html">home</a></li>
+              <li><a href="para2.html">parallax</a></li>
+              <li><a href="para3.html">para 3</a></li>
+              <li><a href="navigation.html">navigation</a></li>
+              <li><a href="">home</a></li>
+      </ul>
+      <ul class="social">
+        <li><a href="#">FB</a></li>
+        <li><a href="#">Bē</a></li>
+        <li><a href="#">IN</a></li>
+        <li><a href="#">TW</a></li>
+      </ul>
+    </nav>
+    <label for="nav-tog" class="navtoglab">
+      <span class="dropx"></span>
+  </header>
+  <main class="main-content">
+    <h2>Tester</h2>
+    <p class="main-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum nihil tenetur nulla culpa laudantium quasi rem. Aut assumenda, magni illum odit eos, perferendis ipsa impedit. Nostrum possimus doloribus delectus asperiores accusamus non libero incidunt sequi eaque architecto, ullam qui repellendus iusto voluptates blanditiis maiores soluta quaerat unde, a labore placeat autem nulla reiciendis ea. Harum ipsum veritatis asperiores provident vero impedit vitae officia alias soluta recusandae neque a, voluptates voluptatibus nulla repellendus repudiandae dolorem odio accusamus autem corporis quas voluptas fugit! Ipsam voluptates ducimus, odio tenetur sed minus consequuntur ex excepturi velit beatae. Saepe molestias quas aliquid est? Vero, cum.
+    </p>
+
+  </main>
+  <footer class="footer">
+
+  </footer>
+  <script src="navigation.js"></script>
+  </body>
+</html>
+
+<!-- ***************   1  *********************** -->
+
+<!-- <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+
+      li {
+        list-style-type: none;
+      }
+
+      header {
+        position: fixed;
+        width: 100%;
+        background-color: orange;
+        display: grid;
+        grid-template-columns: 100px auto 80px;
+      }
+      .nav {
+        background-color: grey;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+      }
+      a {
+        width: 100%;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        margin-right: 20px;
+        color: black;
+        display: block;
+        padding: 1em;
+        transition: 500ms;
+      }
+      a:hover {
+        background-color: darkgrey;
+        color: #fff;
+      }
+      .btnMenu {
+        font-size: 1.2rem;
+        text-transform: capitalize;
+        cursor: pointer;
+        height: 30px;
+        width: 80px;
+      }
+      .links {
+        height: 0;
+        overflow: hidden;
+        transition: 500ms;
+      }
+      .show-links {
+        height: 300px;
+      }
+      .logo {
+        display: inline-block;
+      }
+
+      @media screen and (min-width: 700px) {
+        header {
+          align-items: center;
+        }
+        .nav {
+          grid-column: 2 / 3;
+        }
+        .links {
+          height: auto;
+          display: flex;
+        }
+        .logo {
+          grid-column: 1 / 2;
+        }
+        .btnMenu {
+          grid-column: 3 / 4;
+        }
+      }
+    </style> -->
+<!-- **************   1  ******************** -->
+
+<!-- ****************   2  ****************** -->
+<!-- styles -->
+<!-- <link rel="stylesheet" href="styles.css" />
+<style>
+  *,
+  ::before,
+  ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  :root {
+    font-family: sans-serif;
+  }
+  li {
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-right: 1em;
+    color: #000;
+  }
+  .header {
+    background-color: orange;
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav {
+    padding-top: 0.5em;
+  }
+  .btnMenu {
+    display: none;
+    height: 30px;
+    text-transform: capitalize;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .links {
+    height: 0;
+    display: flex;
+  }
+  .show-links {
+    height: 300px;
+    display: block;
+  }
+  .logo {
+    display: inline-block;
+  }
+
+  /********** MEDIA QUERIES **********/
+  @media (max-width: 650px) {
+    .btnMenu {
+      display: inline-block;
+    }
+    .links {
+      height: 0;
+      overflow: hidden;
+      transition: 500ms;
+    }
+  }
+</style> -->
+<!-- ****************   2  ****************** -->

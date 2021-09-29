@@ -1,0 +1,129 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+footer {
+  padding: 3em;
+  text-align: center;
+}
+h1 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+body {
+  font-family: sans-serif;
+  line-height: 1;
+}
+.middle {
+  background-color: blue;
+  border: 3px solid red;
+}
+li {
+  list-style-type: none;
+  padding: 1rem;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  padding: 1rem;
+}
+a:hover {
+  color: #000;
+}
+/* *************** GRID CONTAINER **************** */
+.container {
+  width: min(95%, 71rems);
+  height: 400vh;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 80px auto 80px;
+  grid-template-areas:
+    "h h h h h h h h h h h h"
+    "m c c c c c c c c c c m2"
+    "f f f f f f f f f f f f";
+}
+.header {
+  background-color: orangered;
+  /* grid-column: 1 / -1; */
+  grid-area: h;
+}
+.menu {
+  background-color: red;
+  /* grid-column: 1 / 3; */
+  grid-area: m;
+}
+.content {
+  background-color: rgb(78, 78, 15);
+  /* grid-column: 3 / 11; */
+  grid-area: c;
+}
+.menu2 {
+  background-color: red;
+  /* grid-column: 11 / -1; */
+  grid-area: m2;
+}
+.footer {
+  background-color: green;
+  /* grid-column: 1 / -1; */
+  grid-area: f;
+}
+
+/**** SECONG GRID ********/
+.mid-container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  /* grid-template-rows: repeat(2, 100px); */
+  color: #fff;
+  font-size: 2rem;
+  grid-auto-rows: 100px;
+  padding: 1em;
+}
+
+/****** IMAGE AND TEXT ***********/
+img {
+  width: 100%;
+  display: block;
+}
+.image-test {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 100px 1fr;
+}
+.photo {
+  object-fit: cover;
+  width: 120px;
+  height: 150px;
+  grid-column: 1 / 2;
+  border: 3px solid black;
+}
+.imgText {
+  grid-column: 2 / 3;
+}
+.image-test p {
+  font-size: 1rem;
+  width: 120px;
+  height: 150px;
+  /* padding: 0.5em; */
+}
+.prodHead {
+  font-size: 0.9rem;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+/****** IMAGE AND TEXT ***********/
+
+@media screen and (max-width: 500px) {
+  .image-test {
+    grid-template-columns: 1fr;
+  }
+}
